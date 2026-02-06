@@ -6,7 +6,7 @@ import json
 # Stratego, Pente, Catan
 
 pygame.init()
-CANVAS = pygame.display.set_mode((1000,1000))
+CANVAS = pygame.display.set_mode((500,500))
 pygame.display.set_caption("Ernst Games")
 running = True
 
