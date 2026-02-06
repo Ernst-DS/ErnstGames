@@ -10,15 +10,6 @@ CANVAS = pygame.display.set_mode((1000,1000))
 pygame.display.set_caption("Ernst Games")
 running = True
 
-while running:
-    CANVAS.fill("white")
-
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    pygame.display.update()
-
 class Connection:
     def __init__(self, sock):
         self.sock = sock
@@ -70,3 +61,19 @@ def connect(ip, port=5000):
     sock.connect((ip, port))
     print("Connected to host")
     return Connection(sock)
+
+
+SERVER_IP = input("Geef Ernst's IP in: ")
+if SERVER_IP == "":
+    connection = host()
+else:
+    connection = connect(SERVER_IP)
+
+while running:
+    CANVAS.fill("white")
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    pygame.display.update()
